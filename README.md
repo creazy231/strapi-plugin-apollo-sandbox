@@ -31,10 +31,10 @@ Install the plugin in your Strapi project.
 
 ```bash
 # using yarn
-yarn add @creazy/strapi-plugin-apollo-sandbox
+yarn add @creazy231/strapi-plugin-apollo-sandbox
 
 # using npm
-npm install @creazy/strapi-plugin-apollo-sandbox --save
+npm install @creazy231/strapi-plugin-apollo-sandbox --save
 ```
 
 After successful installation, you've to build a fresh package. To archive that simply use:
