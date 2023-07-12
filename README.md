@@ -156,12 +156,9 @@ Give a star if this project helped you.
 - [NPM package](https://www.npmjs.com/package/@creazy231/strapi-plugin-apollo-sandbox)
 - [GitHub repository](https://github.com/boazpoolman/@creazy231/strapi-plugin-apollo-sandbox)
 
-## Community support
-For general help using Strapi, please refer to the official Strapi documentation. For additional help with this plugin, you can reach out to me on the Strapi Discord channel or on Twitter.
-
 ## 🌎 Community support
 - For general help using Strapi, please refer to [the official Strapi documentation](https://strapi.io/documentation/).
-- You can contact me on the Strapi Discord [channel](https://discord.strapi.io/).
+- You can contact me on the Strapi Discord [channel](https://discord.strapi.io/) or on Twitter.
 
 ## License
 MIT License Copyright (c) 2023 creazy231.
