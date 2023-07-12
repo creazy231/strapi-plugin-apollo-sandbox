@@ -19,7 +19,11 @@
   </p>
 </div>
 
+---
+
 <img src="https://raw.githubusercontent.com/creazy231/strapi-plugin-apollo-sandbox/main/media/screenshot.jpeg">
+
+---
 
 ## ⏳ Installation
 
