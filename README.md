@@ -1,23 +1,25 @@
 <div align="center">
-<h1>Strapi Plugin: Apollo Sandbox</h1>
-
-<p style="margin-top: 0;">Enhance your Strapi Admin Interface with Apollo Sandbox, an alternative GraphQL Explorer. Simplify development and testing of GraphQL queries and mutations directly within the Strapi Admin Interface. Explore your API schema, test queries in real-time, and iterate faster with this powerful plugin.</p>
-
-<p>
-  <a href="https://www.npmjs.org/package/@creazy231/strapi-plugin-apollo-sandbox">
-    <img src="https://img.shields.io/npm/v/@creazy231/strapi-plugin-apollo-sandbox/latest.svg" alt="NPM Version" />
-  </a>
-  <a href="https://www.npmjs.org/package/@creazy231/strapi-plugin-apollo-sandbox">
-    <img src="https://img.shields.io/npm/dm/@creazy231/strapi-plugin-apollo-sandbox" alt="Monthly download on NPM" />
-  </a>
-  <a href="#-contributing">
-    <img src="https://img.shields.io/badge/Pull_Request-Welcome-brightgreen.svg" alt="PRs welcome!" />
-  </a>
-  <a href="#">
-    <img alt="Repo stars" src="https://img.shields.io/github/stars/creazy231/strapi-plugin-apollo-sandbox?color=white&label=Github Stars">
-  </a>
-</p>
+  <h1>Strapi Plugin: Apollo Sandbox</h1>
+  
+  <p style="margin-top: 0;">Enhance your Strapi Admin Interface with Apollo Sandbox, an alternative GraphQL Explorer. Simplify development and testing of GraphQL queries and mutations directly within the Strapi Admin Interface. Explore your API schema, test queries in real-time, and iterate faster with this powerful plugin.</p>
+  
+  <p>
+    <a href="https://www.npmjs.org/package/@creazy231/strapi-plugin-apollo-sandbox">
+      <img src="https://img.shields.io/npm/v/@creazy231/strapi-plugin-apollo-sandbox/latest.svg" alt="NPM Version" />
+    </a>
+    <a href="https://www.npmjs.org/package/@creazy231/strapi-plugin-apollo-sandbox">
+      <img src="https://img.shields.io/npm/dm/@creazy231/strapi-plugin-apollo-sandbox" alt="Monthly download on NPM" />
+    </a>
+    <a href="#-contributing">
+      <img src="https://img.shields.io/badge/Pull_Request-Welcome-brightgreen.svg" alt="PRs welcome!" />
+    </a>
+    <a href="#">
+      <img alt="Repo stars" src="https://img.shields.io/github/stars/creazy231/strapi-plugin-apollo-sandbox?color=white&label=Github Stars">
+    </a>
+  </p>
 </div>
+
+<img src="https://raw.githubusercontent.com/creazy231/strapi-plugin-apollo-sandbox/main/media/screenshot.jpeg">
 
 ## ⏳ Installation
 
