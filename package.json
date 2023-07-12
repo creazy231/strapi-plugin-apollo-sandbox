@@ -1,9 +1,10 @@
 {
   "name": "@creazy231/strapi-plugin-apollo-sandbox",
-  "version": "0.0.1",
+  "version": "--tag",
   "description": "Integrate Apollo Sandbox for a powerful GraphQL Explorer in your Strapi Admin Interface",
   "strapi": {
-    "name": "Apollo Sandbox",
+    "displayName": "Apollo Sandbox",
+    "name": "apollo-sandbox",
     "description": "Integrate Apollo Sandbox for a powerful GraphQL Explorer in your Strapi Admin Interface",
     "kind": "plugin"
   },

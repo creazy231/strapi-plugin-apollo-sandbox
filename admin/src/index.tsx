@@ -5,7 +5,7 @@ import pluginId from "./pluginId";
 import Initializer from "./components/Initializer";
 import PluginIcon from "./components/PluginIcon";
 
-const name = pluginPkg.strapi.name;
+const name = pluginPkg.strapi.displayName;
 
 export default {
   register(app: any) {
