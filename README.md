@@ -101,11 +101,12 @@ export default {
   // ...
   "apollo-sandbox": {
     enabled: true,
-    endpoint: "https://tunneled-strapi.com/graphql", // endpoint has to be accessible from the browser
+    endpoint: "https://tunneled-strapi.com/graphql", // OPTIONAL - endpoint has to be accessible from the browser
   },
   // ...
 };
 ```
+`endpoint` configuration is **optional**. If you don't provide it, the plugin will create a tunnel of your Strapi instance. This is useful if you're developing locally but still want to use the Apollo Sandbox plugin. You can still provide your own tunneled endpoint if you want to.
 
 ## 🖐 Requirements
 Complete installation requirements are exact same as for Strapi itself and can be found in the documentation under Installation Requirements.
