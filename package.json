@@ -8,6 +8,14 @@
     "description": "Integrate Apollo Sandbox for a powerful GraphQL Explorer in your Strapi Admin Interface",
     "kind": "plugin"
   },
+  "files": [
+    "dist/**",
+    "admin/**",
+    "server/**",
+    "package.json",
+    "strapi-admin.js",
+    "strapi-server.js"
+  ],
   "dependencies": {
     "@apollo/sandbox": "^2.5.0",
     "@strapi/design-system": "^1.6.3",
