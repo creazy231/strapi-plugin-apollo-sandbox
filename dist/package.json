@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "description": "Integrate Apollo Sandbox for a powerful GraphQL Explorer in your Strapi Admin Interface",
     "strapi": {
-        "name": "Apollo Sandbox",
+        "displayName": "Apollo Sandbox",
+        "name": "apollo-sandbox",
         "description": "Integrate Apollo Sandbox for a powerful GraphQL Explorer in your Strapi Admin Interface",
         "kind": "plugin"
     },
@@ -21,7 +22,7 @@
         "@types/react-dom": "^18.0.28",
         "@types/react-router-dom": "^5.3.3",
         "@types/styled-components": "^5.1.26",
-        "bump": "^0.2.5",
+        "bumpp": "^9.1.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^5.3.4",
@@ -54,7 +55,7 @@
     "scripts": {
         "dev": "tsc -p tsconfig.server.json -w",
         "build": "tsc -p tsconfig.server.json",
-        "release": "bump --tag --push --all"
+        "release": "bumpp --tag --push --all"
     },
     "license": "MIT"
 }
