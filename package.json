@@ -9,7 +9,16 @@
     "kind": "plugin"
   },
   "files": [
-    "dist/**"
+    "dist/**",
+    "admin/**",
+    "server/**",
+    "custom.d.ts",
+    "package.json",
+    "README.md",
+    "strapi-admin.js",
+    "strapi-server.js",
+    "tsconfig.json",
+    "tsconfig.server.json"
   ],
   "dependencies": {
     "@apollo/sandbox": "^2.5.0",
