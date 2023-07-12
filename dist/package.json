@@ -1,0 +1,61 @@
+{
+    "name": "@creazy231/strapi-plugin-apollo-sandbox",
+    "version": "0.0.5",
+    "description": "Integrate Apollo Sandbox for a powerful GraphQL Explorer in your Strapi Admin Interface",
+    "strapi": {
+        "displayName": "Apollo Sandbox",
+        "name": "apollo-sandbox",
+        "description": "Integrate Apollo Sandbox for a powerful GraphQL Explorer in your Strapi Admin Interface",
+        "kind": "plugin"
+    },
+    "dependencies": {
+        "@apollo/sandbox": "^2.5.0",
+        "@strapi/design-system": "^1.6.3",
+        "@strapi/helper-plugin": "^4.6.0",
+        "@strapi/icons": "^1.6.3",
+        "localtunnel": "^2.0.2",
+        "prop-types": "^15.7.2"
+    },
+    "devDependencies": {
+        "@strapi/typescript-utils": "^4.6.0",
+        "@types/react": "^17.0.53",
+        "@types/react-dom": "^18.0.28",
+        "@types/react-router-dom": "^5.3.3",
+        "@types/styled-components": "^5.1.26",
+        "bumpp": "^9.1.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^5.3.4",
+        "styled-components": "^5.3.6",
+        "typescript": "5.0.4"
+    },
+    "peerDependencies": {
+        "@strapi/strapi": "^4.11.5",
+        "react": "^17.0.0 || ^18.0.0",
+        "react-dom": "^17.0.0 || ^18.0.0",
+        "react-router-dom": "^5.3.4",
+        "styled-components": "^5.3.6"
+    },
+    "author": {
+        "name": "Tobias Thiele",
+        "email": "info@tobias-thiele.de",
+        "url": "https://github.com/creazy231"
+    },
+    "maintainers": [
+        {
+            "name": "Tobias Thiele",
+            "email": "info@tobias-thiele.de",
+            "url": "https://github.com/creazy231"
+        }
+    ],
+    "engines": {
+        "node": ">=14.19.1 <=18.x.x",
+        "npm": ">=6.0.0"
+    },
+    "scripts": {
+        "dev": "tsc -p tsconfig.server.json -w",
+        "build": "tsc -p tsconfig.server.json",
+        "release": "bumpp --tag --push --all"
+    },
+    "license": "MIT"
+}
