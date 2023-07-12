@@ -1,46 +1,107 @@
-# Apollo Sandbox
+<div align="center">
+<h1>Strapi Plugin: Apollo Sandbox</h1>
 
-Enhance your Strapi Admin Interface with Apollo Sandbox, an alternative GraphQL Explorer. Simplify development and testing of GraphQL queries and mutations directly within the Strapi Admin Interface. Explore your API schema, test queries in real-time, and iterate faster with this powerful plugin.
+<p style="margin-top: 0;">Enhance your Strapi Admin Interface with Apollo Sandbox, an alternative GraphQL Explorer. Simplify development and testing of GraphQL queries and mutations directly within the Strapi Admin Interface. Explore your API schema, test queries in real-time, and iterate faster with this powerful plugin.</p>
 
-## About
-This plugin integrates Apollo Sandbox for a powerful GraphQL Explorer in your Strapi Admin Interface.
+<p>
+  <a href="https://www.npmjs.org/package/@creazy231/strapi-plugin-apollo-sandbox">
+    <img src="https://img.shields.io/npm/v/@creazy231/strapi-plugin-apollo-sandbox/latest.svg" alt="NPM Version" />
+  </a>
+  <a href="https://www.npmjs.org/package/@creazy231/strapi-plugin-apollo-sandbox">
+    <img src="https://img.shields.io/npm/dm/@creazy231/strapi-plugin-apollo-sandbox" alt="Monthly download on NPM" />
+  </a>
+  <a href="#-contributing">
+    <img src="https://img.shields.io/badge/Pull_Request-Welcome-brightgreen.svg" alt="PRs welcome!" />
+  </a>
+  <a href="#">
+    <img alt="Repo stars" src="https://img.shields.io/github/stars/creazy231/strapi-plugin-apollo-sandbox?color=white&label=Github Stars">
+  </a>
+</p>
+</div>
 
-## Installation
-Install Strapi with this Quickstart command to create a Strapi project instantly:
+## ⏳ Installation
+
+Install the plugin in your Strapi project.
 
 ```bash
-# with yarn
-yarn create strapi-app my-project --quickstart
-# with npm/npx
-npx create-strapi-app my-project --quickstart
-```
-This command generates a brand new project with the default features (authentication, permissions, content management, content type builder & file upload). The Quickstart command installs Strapi using a SQLite database which is used for prototyping in development.
+# using yarn
+yarn add @creazy/strapi-plugin-apollo-sandbox
 
-### Add the Apollo Sandbox plugin:
-```bash
-yarn add @creazy/strapi-plugin-apollo-sandbox@latest
-# or
-npm i -S @creazy/strapi-plugin-apollo-sandbox@latest
+# using npm
+npm install @creazy/strapi-plugin-apollo-sandbox --save
 ```
 
-After successful installation, you've to build a fresh package that includes plugin UI. To archive that simply use:
+After successful installation, you've to build a fresh package. To archive that simply use:
 
 ```bash
 yarn build && yarn develop
 # or
 npm run build && npm run develop
 ```
-or just run Strapi in the development mode with --watch-admin option:
-
-```bash
-yarn develop --watch-admin
-#or
-npm run develop --watch-admin
-```
 
 The Apollo Sandbox plugin should appear in the Plugins section of Strapi sidebar after you run the app again.
 
-## Requirements
+## 🔧 Configuration
+### ⚠️ Important Configuration
+You need to modify the `./config/middlewares.ts` file and replace `strapi::security` with the following:
+
+```javascript
+export default [
+  // ...
+  {
+    name: "strapi::security",
+    config: {
+      contentSecurityPolicy: {
+        directives: {
+          "frame-src": [ "http://localhost:*", "self", "sandbox.embed.apollographql.com" ],
+        },
+      },
+    },
+  },
+  // ...
+]
+```
+
+After the modification, your file should look like this:
+```javascript
+export default [
+  "strapi::errors",
+  {
+    name: "strapi::security",
+    config: {
+      contentSecurityPolicy: {
+        directives: {
+          "frame-src": [ "http://localhost:*", "self", "sandbox.embed.apollographql.com" ],
+        },
+      },
+    },
+  },
+  "strapi::cors",
+  "strapi::poweredBy",
+  "strapi::logger",
+  "strapi::query",
+  "strapi::body",
+  "strapi::session",
+  "strapi::favicon",
+  "strapi::public",
+];
+```
+
+### 🛠️ Plugin Configuration
+Config can be changed in the `./config/plugins.ts` file in your Strapi project. You can overwrite the config like so:
+
+```javascript
+export default {
+  // ...
+  "apollo-sandbox": {
+    enabled: true,
+    endpoint: "https://tunneled-strapi.com/graphql", // endpoint has to be accessible from the browser
+  },
+  // ...
+};
+```
+
+## 🖐 Requirements
 Complete installation requirements are exact same as for Strapi itself and can be found in the documentation under Installation Requirements.
 
 Supported Strapi versions:
@@ -54,14 +115,22 @@ Node / NPM versions:
 
 We recommend always using the latest version of Strapi to start your new projects.
 
-## Contributing
+## 🤝 Contributing
 Feel free to fork and make a Pull Request to this plugin project. All the input is warmly welcome!
 
-## Show your support
+## ⭐️ Show your support
 Give a star if this project helped you.
 
-## License
-MIT License Copyright (c) 2023 creazy231.
+## 🔗 Links
+- [NPM package](https://www.npmjs.com/package/@creazy231/strapi-plugin-apollo-sandbox)
+- [GitHub repository](https://github.com/boazpoolman/@creazy231/strapi-plugin-apollo-sandbox)
 
 ## Community support
 For general help using Strapi, please refer to the official Strapi documentation. For additional help with this plugin, you can reach out to me on the Strapi Discord channel or on Twitter.
+
+## 🌎 Community support
+- For general help using Strapi, please refer to [the official Strapi documentation](https://strapi.io/documentation/).
+- You can contact me on the Strapi Discord [channel](https://discord.strapi.io/).
+
+## License
+MIT License Copyright (c) 2023 creazy231.
