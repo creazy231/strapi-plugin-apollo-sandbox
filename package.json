@@ -13,6 +13,7 @@
     "admin/**",
     "server/**",
     "package.json",
+    "README.md",
     "strapi-admin.js",
     "strapi-server.js"
   ],

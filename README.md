@@ -16,6 +16,9 @@
     <a href="#">
       <img alt="Repo stars" src="https://img.shields.io/github/stars/creazy231/strapi-plugin-apollo-sandbox?color=white&label=Github Stars">
     </a>
+    <a href="https://ko-fi.com/creazy231">
+      <img alt="Support me on Ko-fi" src="https://img.shields.io/badge/Support_me-on_Ko--fi_☕-43D7AA">
+    </a>
   </p>
 </div>
 
@@ -24,6 +27,10 @@
 <img src="https://raw.githubusercontent.com/creazy231/strapi-plugin-apollo-sandbox/main/media/screenshot.jpeg">
 
 ---
+
+## 💭 Motivation
+
+_There already is a GraphQL Playground plugin for Strapi, why do I need Apollo Sandbox?_ Well, the current Playground just doesn't provide a good developer experience in my opinion. Apollo Sandbox is a great alternative to the GraphQL Playground with an awesome developer experience. That's why I created this plugin.
 
 ## ⏳ Installation
 
@@ -49,7 +56,10 @@ The Apollo Sandbox plugin should appear in the Plugins section of Strapi sidebar
 
 ## 🔧 Configuration
 ### ⚠️ Important Configuration
-You need to modify the `./config/middlewares.ts` file and replace `strapi::security` with the following:
+
+This plugin requires the **graphql plugin** and its **playground** to be **enabled**. You can enable it in the `./config/plugins.ts` file in your Strapi project.
+
+You also need to modify the `./config/middlewares.ts` file and replace `strapi::security` with the following:
 
 ```javascript
 export default [
@@ -99,8 +109,18 @@ Config can be changed in the `./config/plugins.ts` file in your Strapi project. 
 ```javascript
 export default {
   // ...
-  "apollo-sandbox": {
+  "graphql": {
     enabled: true,
+    config: {
+      // set this to true if you want to enable the playground in production
+      playgroundAlways: false,
+    },
+  },
+  "apollo-sandbox": {
+    // enables the plugin only in development mode
+    // if you also want to use it in production, set this to true
+    // keep in mind that graphql playground has to be enabled
+    enabled: process.env.NODE_ENV === "production" ? false : true,
     endpoint: "https://tunneled-strapi.com/graphql", // OPTIONAL - endpoint has to be accessible from the browser
   },
   // ...
@@ -127,6 +147,10 @@ Feel free to fork and make a Pull Request to this plugin project. All the input 
 
 ## ⭐️ Show your support
 Give a star if this project helped you.
+
+<a href="https://ko-fi.com/creazy231">
+  <img width="270px" src="https://storage.ko-fi.com/cdn/brandasset/kofi_button_stroke.png" alt="Support me on Ko-fi">
+</a>
 
 ## 🔗 Links
 - [NPM package](https://www.npmjs.com/package/@creazy231/strapi-plugin-apollo-sandbox)
