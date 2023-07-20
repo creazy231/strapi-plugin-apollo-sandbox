@@ -1,6 +1,6 @@
 {
   "name": "@creazy231/strapi-plugin-apollo-sandbox",
-  "version": "0.0.10",
+  "version": "0.0.11-beta.0",
   "description": "Integrate Apollo Sandbox for a powerful GraphQL Explorer in your Strapi Admin Interface",
   "strapi": {
     "displayName": "Apollo Sandbox",
@@ -19,27 +19,27 @@
   ],
   "dependencies": {
     "@apollo/sandbox": "^2.5.0",
-    "@strapi/design-system": "^1.6.3",
-    "@strapi/helper-plugin": "^4.6.0",
-    "@strapi/icons": "^1.6.3",
+    "@strapi/design-system": "^1.8.2",
+    "@strapi/helper-plugin": "^4.11.7",
+    "@strapi/icons": "^1.8.2",
     "localtunnel": "^2.0.2",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.8.1"
   },
   "devDependencies": {
-    "@strapi/typescript-utils": "^4.6.0",
-    "@types/react": "^17.0.53",
-    "@types/react-dom": "^18.0.28",
+    "@strapi/typescript-utils": "^4.11.7",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
     "bumpp": "^9.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^5.3.4",
-    "styled-components": "^5.3.6",
-    "typescript": "5.0.4"
+    "react-router-dom": "^6.14.2",
+    "styled-components": "^6.0.4",
+    "typescript": "^5.1.6"
   },
   "peerDependencies": {
-    "@strapi/strapi": "^4.11.5",
+    "@strapi/strapi": "^4.11.7",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
     "react-router-dom": "^5.3.4",
