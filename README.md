@@ -55,11 +55,9 @@ npm run build && npm run develop
 The Apollo Sandbox plugin should appear in the Plugins section of Strapi sidebar after you run the app again.
 
 ## 🔧 Configuration
-### ⚠️ Important Configuration
-
-This plugin requires the **graphql plugin** and its **playground** to be **enabled**. You can enable it in the `./config/plugins.ts` file in your Strapi project.
-
-You also need to modify the `./config/middlewares.ts` file and replace `strapi::security` with the following:
+> [!IMPORTANT]
+> This plugin requires the **graphql plugin** and its **playground** to be **enabled**. You can enable it in the `./config/plugins.ts` file in your Strapi project.
+> You also need to modify the `./config/middlewares.ts` file and replace `strapi::security` with the following:
 
 ```javascript
 export default [
