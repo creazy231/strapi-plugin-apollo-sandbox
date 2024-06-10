@@ -13,7 +13,7 @@ export default ({ strapi }: { strapi: Strapi }) => ({
       return ctx.throw(400, "Server port or GraphQL endpoint not found");
     }
 
-    let URL: string;
+    let url: string;
 
     if (endpoint) {
       url = endpoint;
