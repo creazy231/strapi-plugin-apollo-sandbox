@@ -13,7 +13,7 @@ export default ({ strapi }: { strapi: Strapi }) => ({
       return ctx.throw(400, "Server port or GraphQL endpoint not found");
     }
 
-    let url;
+    let URL: string;
 
     if (endpoint) {
       url = endpoint;
@@ -25,7 +25,7 @@ export default ({ strapi }: { strapi: Strapi }) => ({
         local_host: Number(NODE_MAJOR_VERSION) <= 16 ? "0.0.0.0" : "127.0.0.1",
         allow_invalid_cert: true,
       });
-      url = `${tunnel.url}${ENDPOINT}`,
+      url = `${tunnel.url}${ENDPOINT}`;
     }
 
     ctx.body = {
