@@ -4,7 +4,7 @@ export default {
   }),
   validator: (config) => {
     if (config.endpoint) {
-      if (config.endpoint !== typeof "string") {
+      if (typeof config.endpoint !== "string") {
         throw new TypeError("endpoint has to be a string");
       }
 
