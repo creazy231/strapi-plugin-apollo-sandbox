@@ -8,7 +8,7 @@ export default {
         throw new TypeError("endpoint has to be a string");
       }
 
-      if (!config.endpoint.startsWith("http://") || !config.endpoint.startsWith("https://")) {
+      if (!config.endpoint.startsWith("http://") && !config.endpoint.startsWith("https://")) {
         throw new TypeError("endpoint has to be a valid URL");
       }
     }
