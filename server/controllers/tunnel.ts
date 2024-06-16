@@ -5,7 +5,7 @@ import pluginId from "../../admin/src/pluginId";
 let tunnel: localtunnel.Tunnel | null = null;
 export default ({ strapi }: { strapi: Strapi }) => ({
   async createTunnel(ctx) {
-    const endpoint = strapi.config.get(pluginId)?.endpoint;
+    const endpoint = strapi.config.get("plugin."+pluginId)?.endpoint;
     const PORT = strapi.config.get("server.port");
     const ENDPOINT = strapi.config.get("plugin.graphql.endpoint");
 
@@ -13,17 +13,23 @@ export default ({ strapi }: { strapi: Strapi }) => ({
       return ctx.throw(400, "Server port or GraphQL endpoint not found");
     }
 
-    const NODE_MAJOR_VERSION = process.versions.node.split(".")[0];
+    let url: string;
 
-    tunnel = await localtunnel({
-      host: "http://lt.boltapi.com",
-      port: PORT,
-      local_host: Number(NODE_MAJOR_VERSION) <= 16 ? "0.0.0.0" : "127.0.0.1",
-      allow_invalid_cert: true,
-    });
+    if (endpoint) {
+      url = endpoint;
+    } else {
+      const NODE_MAJOR_VERSION = process.versions.node.split(".")[0];
+      tunnel = await localtunnel({
+        host: "http://lt.boltapi.com",
+        port: PORT,
+        local_host: Number(NODE_MAJOR_VERSION) <= 16 ? "0.0.0.0" : "127.0.0.1",
+        allow_invalid_cert: true,
+      });
+      url = `${tunnel.url}${ENDPOINT}`;
+    }
 
     ctx.body = {
-      url: `${tunnel.url}${ENDPOINT}`,
+      url,
     };
   },
   async closeTunnel(ctx) {
