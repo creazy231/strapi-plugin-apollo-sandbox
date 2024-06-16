@@ -5,6 +5,7 @@ import pluginId from "../../admin/src/pluginId";
 let tunnel: localtunnel.Tunnel | null = null;
 export default ({ strapi }: { strapi: Strapi }) => ({
   async createTunnel(ctx) {
+    // @ts-ignore
     const endpoint = strapi.config.get("plugin."+pluginId)?.endpoint;
     const PORT = strapi.config.get("server.port");
     const ENDPOINT = strapi.config.get("plugin.graphql.endpoint");
