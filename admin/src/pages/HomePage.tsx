@@ -1,23 +1,15 @@
-/*
- *
- * HomePage
- *
- */
+import "../styles/app.css";
 
-import "../../styles/app.css";
-import { request } from "@strapi/helper-plugin";
-import React, { useEffect, useState } from "react";
-import { ApolloSandbox } from "@apollo/sandbox/react";
+import {
+  Layouts,
+} from '@strapi/strapi/admin';
+
 import {
   Box,
-  ContentLayout,
-  HeaderLayout,
-  Icon,
-  Layout,
   Main,
   TextButton,
-  Typography,
-} from "@strapi/design-system";
+  Typography, } from '@strapi/design-system';
+import { ApolloSandbox } from "@apollo/sandbox/react";
 import { ArrowLeft } from "@strapi/icons";
 
 interface CreateTunnelResponse {
@@ -35,12 +27,14 @@ query ExampleQuery {
 // with a valid JWT token or API Token. (API Tokens can't access "me")
 `;
 
-function HomePage() {
-  const [ error, setError ] = useState(null);
-  const [ tunnel, setTunnel ] = useState(null);
+import {useEffect, useState} from "react";
+
+const HomePage = () => {
+  const [ error, setError ] = useState("");
+  const [ tunnel, setTunnel ] = useState("");
 
   useEffect(() => {
-    request("/apollo-sandbox/create-tunnel", {
+    fetch("/apollo-sandbox/create-tunnel", {
       method: "GET",
     }).then((res: CreateTunnelResponse) => {
       console.log(`GraphQL Tunnel created on: ${res.url}`);
@@ -51,7 +45,7 @@ function HomePage() {
     });
 
     return () => {
-      request("/apollo-sandbox/close-tunnel", {
+      fetch("/apollo-sandbox/close-tunnel", {
         method: "GET",
       }).then((res) => {
         console.log("GraphQL Tunnel closed");
@@ -74,15 +68,15 @@ function HomePage() {
                 className={"apollo-sandbox"}
                 initialEndpoint={tunnel}
               />
-              )
+            )
             : (
-              <Layout>
+              <Layouts.Root>
                 <Main>
-                  <HeaderLayout
+                  <Layouts.Header
                     title="Apollo Sandbox"
                     subtitle="A Powerful Plugin for Apollo GraphQL Development"
                   />
-                  <ContentLayout>
+                  <Layouts.Content>
                     <Box padding={4} hasRadius background="neutral0" shadow="tableShadow">
                       {
                         error
@@ -90,22 +84,22 @@ function HomePage() {
                             <Typography textColor="danger500">
                               {error}
                             </Typography>
-                            )
+                          )
                           : (
-                            <TextButton loading startIcon={<Icon as={ArrowLeft}/>}>
+                            <TextButton loading startIcon={<ArrowLeft />}>
                               Loading Tunnel...
                             </TextButton>
-                            )
+                          )
                       }
                     </Box>
-                  </ContentLayout>
+                  </Layouts.Content>
                 </Main>
-              </Layout>
-              )
+              </Layouts.Root>
+            )
         }
       </div>
     </>
   );
-}
+};
 
-export default HomePage;
+export { HomePage };
